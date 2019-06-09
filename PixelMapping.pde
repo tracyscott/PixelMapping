@@ -208,6 +208,7 @@ void draw() {
   update();
   stroke(255);
   strokeWeight(1);
+  noFill();
   int i = 0;
   for (LXPoint point : points) {
     if (i == highlightedPoint) {
@@ -227,6 +228,11 @@ void draw() {
     if (!checkbox.getItem(outputNum).getBooleanValue()) continue;
     ArrayList<Integer> curOutputIndices = outputs[outputNum];
     stroke(outputColors[outputNum]);
+    if (curOutputIndices.size() > 0) {
+      fill(outputColors[outputNum]);
+      rect(points.get(curOutputIndices.get(0)).v.x, points.get(curOutputIndices.get(0)).v.y, radius, radius);
+      noFill();
+    }
     beginShape();
     for (Integer pointIndex : curOutputIndices) {
       PVector point = points.get(pointIndex).v;
@@ -273,6 +279,7 @@ void keyPressed() {
   } else if (keyCode == 80) {  // p key toggles printMode
     printMode = !printMode;
   }
+  System.out.println("selectedPoint=" + selectedPoint);
 }
 
 void addSelectedPoint() {
