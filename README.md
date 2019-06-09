@@ -18,5 +18,6 @@ select a new output on the right side of the screen.
 'p' toggles print mode.  Changes the background to white for easier printing to paper.  Should be used
 with the hide/show toggles to print a reference sheet for each output independently. 
 
+![PixelMapping](https://raw.github.com/tracyscott/PixelMapping/master/ravemapping.gif)
 
 
