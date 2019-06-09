@@ -357,7 +357,7 @@ int findPointAbove(PVector src) {
   for (LXPoint point : points) {
     float dist = point.v.dist(src);
     // Must be about the same X.
-    if (dist < closestDistance && abs(point.x - src.x) < 0.9
+    if (dist < closestDistance && abs(point.x - src.x) < 2.0
       && point.y - src.y < 0) {
       closestDistance = dist;
       closestPointIndex = i;
@@ -374,7 +374,7 @@ int findPointBelow(PVector src) {
   for (LXPoint point : points) {
     float dist = point.v.dist(src);
     // Must be about the same X.
-    if (dist < closestDistance && abs(point.x - src.x) < 0.9 
+    if (dist < closestDistance && abs(point.x - src.x) < 2.0 
       && point.y - src.y > 0) {
       closestDistance = dist;
       closestPointIndex = i;
@@ -391,7 +391,7 @@ int findPointLeft(PVector src) {
   for (LXPoint point : points) {
     float dist = point.v.dist(src);
     // Must be about the same X.
-    if (dist < closestDistance && abs(point.y - src.y) < 0.9 
+    if (dist < closestDistance && abs(point.y - src.y) < 2.0 
       && point.x - src.x < 0) {
       closestDistance = dist;
       closestPointIndex = i;
